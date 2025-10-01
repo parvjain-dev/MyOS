@@ -1,17 +1,13 @@
 BITS 16
 ORG 0x7C00
 
-mov si, message
-call print
+start:
+    mov si, message
+    call print_string
 
-mainloop:
-    mov ah, 0   ; Wait for keypress, result in AL
-    int 0x16
-    mov ah, 0x0E ; Print character in AL
-    int 0x10
-    jmp mainloop
+    jmp $
 
-print:
+print_string:
     mov ah, 0x0E
 .next_char:
     lodsb
@@ -22,7 +18,7 @@ print:
 .done:
     ret
 
-message db 'Type a key: ',0
+message db 'Boot success!',0
 
 times 510-($-$$) db 0
 dw 0xAA55
