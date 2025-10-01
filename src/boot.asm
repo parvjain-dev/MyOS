@@ -5,9 +5,9 @@ mov si, message
 call print
 
 mainloop:
-    mov ah, 0   ; BIOS: wait for keypress and store ASCII in AL
+    mov ah, 0   ; Wait for keypress, result in AL
     int 0x16
-    mov ah, 0x0E  ; BIOS: print AL to screen
+    mov ah, 0x0E ; Print character in AL
     int 0x10
     jmp mainloop
 
