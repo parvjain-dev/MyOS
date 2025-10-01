@@ -1,0 +1,21 @@
+# Ignore build outputs
+*.bin
+*.img
+*.iso
+
+# Ignore object files
+*.o
+
+# Ignore temporary files
+*.tmp
+*~
+
+# Ignore log files
+*.log
+
+# Ignore QEMU snapshots
+*.qcow2
+
+# Ignore system folders
+.DS_Store   # For macOS
+Thumbs.db   # For Windows
